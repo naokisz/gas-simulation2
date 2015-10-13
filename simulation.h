@@ -14,6 +14,7 @@ int set_velocity(void) {
 	velocity /= mass * 0.001;
 	velocity = sqrt(velocity);
 
+\\究極座標の式ぶちこむ
 	gas_condition.velocity_x = rand
 
 	return 0;
@@ -27,7 +28,3 @@ int set_coordinate(void) {
 
 	return 0;
 }
-
-int make_function(void) {
-	
-
