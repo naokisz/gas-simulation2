@@ -4,7 +4,7 @@
 struct gas {
 	int velocity_x, velocity_y, velocity_z;
 	int coordinate_x, coordinate_y, coordinate_z;
-} gas_condition;
+} gas_condition[];
 
 double velocity;
 
@@ -18,9 +18,7 @@ int main(void) {
 
 	for(;;;) {
 
-		/*直線の作成*/
-		make_function();
-
 		/*直線接近判定*/
+		detect_gas_molecule_collision(void);
 
 		/*

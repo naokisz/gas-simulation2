@@ -14,8 +14,11 @@ int set_velocity(void) {
 	velocity /= mass * 0.001;
 	velocity = sqrt(velocity);
 
-// 究極座標の式ぶちこむ
-	gas_condition.velocity_x = rand
+	/*球極座標を分かんないけど代入してる*/
+	gas_condition.velocity_x = velocity * sin((rand() % 180) * M_PI / 180) * cos((rand() % 180) * M_PI / 180);
+	gas_condition.velocity_y = velocity * sin((rand() % 180) * M_PI / 180) * sin((rand() % 180) * M_PI / 180);
+	gas_condition.velocity_z = velocity * cos((rand() % 180) * M_PI / 180);
+
 
 	return 0;
 }
