@@ -2,6 +2,7 @@
 #define AIR_MASS 28.966
 #define MAX_COORDINATE 22 // TODO ここの値正確にしたい randから弄る必要あるけど
 /*TODO fmodを使って小数の割り算の余りを求められるからrandに活用*/
+#define VAN_DEL_WAALS_RADIUS 1.55e-10
 
 int set_velocity(void) {
 
@@ -54,6 +55,7 @@ velocity_x;
 	return 0;
 }
 
+/*分子と分子の距離を測る*/
 int detect_molecule_collision(void) {
 
 	double distance;
@@ -63,7 +65,11 @@ int detect_molecule_collision(void) {
 		+ exterior_product_z * gas_condition[molecule2]->coordinate_z + intercept) 
 		/ sqrt(exterior_product_x * exterior_product_x + exterior_product_y * exterior_product_y
 			exterior_product_z * exterior_product_z);
-	
+
+	if(distance < (VAN_DEL_WAALS_RADIUS * 2)) { collision(); } /*TODO 未定義*/
+	else if(distance == (VAN_DEL_WAALS_RADIUS * 2)) { graze(); } /*TODO 未定義*/
+	else { wall_collision(); }
+
 	return 0;
 }
 
