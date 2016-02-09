@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "simulation.h"
 
 struct gas {
@@ -20,12 +22,15 @@ int main(void) {
 	/*初期座標の決定*/
 	set_coordinate(void);
 
-	for(;;;) {
+	for(;;) {
 
 		/*平面方程式作成*/
 		make_plane(molecule1, molecule2);
 
 		/*分子接近判定*/
 		detect_molecule_collision(void);
+	}
 
-		/*
+	return 0;
+}
+
