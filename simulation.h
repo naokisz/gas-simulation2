@@ -12,6 +12,13 @@ double velocity;
 /*外積*/
 double exterior_product_x, exterior_product_y, exterior_product_z, intercept;
 
+extern gas {
+	int velocity_x, velocity_y, velocity_z;
+	int coordinate_x, coordinate_y, coordinate_z;
+} *gas_condition;
+extern double velocity;
+extern double exterior_product_x, exterior_product_y, exterior_product_z, intercept;
+
 int set_velocity(void) {
 
 	int temperature = 300; // ケルビン
@@ -45,7 +52,8 @@ int set_coordinate(void) {
 
 int make_plane(int molecule1, int molecule2) {
 
-	/*XXX もう良く分からない*/
+	/*XXX もう良く分からない。多分外積。*/
+	/*0とかになっても良いのかな？*/
 	exterior_product_x = gas_condition[molecule1]->velocity_y * gas_condition[molecule2]->velocity_z
 		- gas_condition[molecule1]->velocity_z * gas_condition[molecule2]->velocity_y;
 

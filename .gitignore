@@ -32,3 +32,7 @@
 *.dSYM/
 
 *.swp
+
+GTAGS
+GRTAGS
+GPATH

@@ -21,9 +21,8 @@ int main(void) {
 
 		/*分子接近判定*/
 		detect_molecule_collision(void);
-
 	}
 
 	return 0;
 }
-	
+
