@@ -1,14 +1,8 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include "simulation.h"
 
-struct gas {
-	int velocity_x, velocity_y, velocity_z;
-	int coordinate_x, coordinate_y, coordinate_z;
-} *gas_condition;
-
-double velocity;
-/*外積*/
-double exterior_product_x, exterior_product_y, exterior_product_z, intercept;
 
 int main(void) {
 
@@ -20,7 +14,7 @@ int main(void) {
 	/*初期座標の決定*/
 	set_coordinate(void);
 
-	for(;;;) {
+	for(;;) {
 
 		/*平面方程式作成*/
 		make_plane(molecule1, molecule2);
@@ -28,4 +22,8 @@ int main(void) {
 		/*分子接近判定*/
 		detect_molecule_collision(void);
 
-		/*
+	}
+
+	return 0;
+}
+	
